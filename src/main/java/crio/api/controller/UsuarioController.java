@@ -3,6 +3,7 @@ package crio.api.controller;
 
 import crio.api.dominio.usuario.Usuario;
 import crio.api.dominio.usuario.UsuarioRequestDTO;
+import crio.api.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
