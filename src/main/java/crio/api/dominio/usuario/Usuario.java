@@ -22,16 +22,12 @@ public class Usuario {
     @GeneratedValue
     private UUID id;
 
-    @Column(name = "nome_completo")
     private String nomeCompleto;
 
-    @Column(name = "email")
     private String email;
 
-    @Column(name = "senha")
     private String senha;
 
-    @Column(name = "tipo_usuario")
     private String tipoUsuario;
 
     private LocalDateTime createdAt;

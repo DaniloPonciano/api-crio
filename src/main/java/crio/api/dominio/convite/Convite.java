@@ -15,6 +15,5 @@ public class Convite {
     @GeneratedValue
     private UUID id;
 
-    @Column(name = "confirma_presenca")
     private boolean confirmaPresenca;
 }

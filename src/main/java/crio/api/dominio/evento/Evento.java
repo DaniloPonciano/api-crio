@@ -20,25 +20,18 @@ public class Evento {
     @GeneratedValue
     private UUID id;
 
-    @Column(name = "nome")
     private String nome;
 
-    @Column(name = "descricao")
     private String descricao;
 
-    @Column(name = "inicio")
     private LocalDateTime inicio;
 
-    @Column(name = "fim")
     private LocalDateTime fim;
 
-    @Column(name = "local")
     private String local;
 
-    @Column(name = "organizador")
     private String organizador;
 
-    @Column(name = "privado")
     private boolean privado;
 
     @ManyToOne

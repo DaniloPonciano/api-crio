@@ -4,7 +4,9 @@ import crio.api.dominio.usuario.Usuario;
 import crio.api.dominio.usuario.UsuarioRequestDTO;
 import crio.api.repositorio.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UsuarioService {
 
     @Autowired
