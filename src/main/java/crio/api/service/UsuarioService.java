@@ -6,6 +6,9 @@ import crio.api.repositorio.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.UUID;
+
 @Service
 public class UsuarioService {
 
@@ -21,5 +24,13 @@ public class UsuarioService {
         newUsuario.setTipoUsuario(data.tipoUsuario());
         usuarioRepository.save(newUsuario);
         return newUsuario;
+    }
+
+    public List<Usuario> getAllUsers(){
+        return usuarioRepository.findAll();
+    }
+
+    public Usuario getUserById() {
+        return usuarioRepository.findById();
     }
 }
