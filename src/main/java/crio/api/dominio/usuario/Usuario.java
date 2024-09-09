@@ -28,7 +28,7 @@ public class Usuario {
 
     private String senha;
 
-    private String tipoUsuario;
+    private int tipoUsuario;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;

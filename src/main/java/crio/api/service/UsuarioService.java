@@ -18,7 +18,7 @@ public class UsuarioService {
         newUsuario.setNomeCompleto(data.nomeCompleto());
         newUsuario.setEmail(data.email());
         newUsuario.setSenha(data.senha());
-        newUsuario.setTipoUsuario(data.tipo());
+        newUsuario.setTipoUsuario(data.tipoUsuario());
         usuarioRepository.save(newUsuario);
         return newUsuario;
     }

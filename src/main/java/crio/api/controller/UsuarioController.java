@@ -23,7 +23,7 @@ public class UsuarioController {
             @RequestParam("nomecompleto") String nomeCompleto,
             @RequestParam("email") String email,
             @RequestParam("senha") String senha,
-            @RequestParam("tipousuario") String tipoUsuario){
+            @RequestParam("tipousuario") int tipoUsuario){
 
         UsuarioRequestDTO usuarioRequestDTO = new UsuarioRequestDTO(nomeCompleto, email, senha, tipoUsuario);
         Usuario newUsuario = this.usuarioService.createUsuario(usuarioRequestDTO);
