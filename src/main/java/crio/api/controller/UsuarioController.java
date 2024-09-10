@@ -39,8 +39,21 @@ public class UsuarioController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Usuario> getUserById(@PathVariable("id")UUID id){
-        Usuario usuario = this.usuarioService.getUserById();
+        Usuario usuario = this.usuarioService.getUserById(id);
         return ResponseEntity.ok(usuario);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Usuario> updateUser(@PathVariable("id")UUID id,UsuarioRequestDTO usuarioRequestDTO){
+        Usuario updatedUsuario = this.usuarioService.updateUser(id, usuarioRequestDTO);
+        System.out.println(usuarioRequestDTO);
+        return ResponseEntity.ok(updatedUsuario);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteUser(@PathVariable("id")UUID id){
+        this.usuarioService.deleteUser(id);
+        return ResponseEntity.noContent().build();
     }
 
 }
