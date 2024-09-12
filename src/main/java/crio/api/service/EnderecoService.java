@@ -4,10 +4,12 @@ import crio.api.dominio.endereco.Endereco;
 import crio.api.dominio.endereco.EnderecoRequesteDTO;
 import crio.api.repositorio.EnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
 
+@Service
 public class EnderecoService {
 
     @Autowired

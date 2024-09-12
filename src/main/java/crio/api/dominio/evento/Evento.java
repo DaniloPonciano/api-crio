@@ -31,8 +31,6 @@ public class Evento {
 
     private String local;
 
-    private String organizador;
-
     private boolean privado;
 
     private String linkEvento;

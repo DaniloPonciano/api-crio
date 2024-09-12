@@ -22,6 +22,7 @@ public class EventoService {
         newEvento.setDescricao(data.descricao());
         newEvento.setInicio(data.inicio());
         newEvento.setFim(data.fim());
+        newEvento.setLocal(data.local());
         newEvento.setPrivado(data.privado());
         newEvento.setLinkEvento(data.linkEvento());
         newEvento.setComoChegar(data.comoChegar());
@@ -48,6 +49,7 @@ public class EventoService {
         updateEvent.setDescricao(eventoRequestDTO.descricao());
         updateEvent.setInicio(eventoRequestDTO.inicio());
         updateEvent.setFim(eventoRequestDTO.fim());
+        updateEvent.setLocal(eventoRequestDTO.local());
         updateEvent.setPrivado(eventoRequestDTO.privado());
         updateEvent.setLinkEvento(eventoRequestDTO.linkEvento());
         updateEvent.setComoChegar(eventoRequestDTO.comoChegar());

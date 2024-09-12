@@ -25,6 +25,7 @@ public class EventoController {
             @RequestParam("descricao") String descricao,
             @RequestParam("inicio") LocalDateTime inicio,
             @RequestParam("fim") LocalDateTime fim,
+            @RequestParam("local") String local,
             @RequestParam("privado") boolean privado,
             @RequestParam("linkEvento") String linkEvento,
             @RequestParam("comoChegar") String comoChegar,
@@ -32,7 +33,7 @@ public class EventoController {
             @RequestParam("usuario") Usuario usuario,
             @RequestParam("endereco") Endereco endereco) {
 
-        EventoRequestDTO eventoRequestDTO = new EventoRequestDTO(nome, descricao, inicio, fim, privado, linkEvento,
+        EventoRequestDTO eventoRequestDTO = new EventoRequestDTO(nome, descricao, inicio, fim, local,  privado, linkEvento,
                                                                  comoChegar, linkForms, usuario, endereco);
         Evento newEvento = this.eventoService.createEvento(eventoRequestDTO);
 
