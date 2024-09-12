@@ -1,6 +1,5 @@
 package crio.api.dominio.usuario;
 
-import crio.api.dominio.convite.Convite;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -33,6 +32,4 @@ public class Usuario {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    @ManyToMany
-    private List<Convite> convite;
 }

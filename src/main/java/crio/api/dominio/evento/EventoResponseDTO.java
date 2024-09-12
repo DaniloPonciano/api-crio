@@ -1,5 +1,8 @@
 package crio.api.dominio.evento;
 
+import crio.api.dominio.endereco.Endereco;
+import crio.api.dominio.usuario.Usuario;
+
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -9,7 +12,11 @@ public record EventoResponseDTO(
         String descricao,
         LocalDateTime inicio,
         LocalDateTime fim,
-        String local,
-        String organizador
+        boolean privado,
+        String linkEvento,
+        String comoChegar,
+        String linkForms,
+        Usuario usuario,
+        Endereco endereco
 ) {
 }

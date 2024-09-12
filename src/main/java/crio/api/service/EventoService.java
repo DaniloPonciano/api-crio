@@ -22,9 +22,13 @@ public class EventoService {
         newEvento.setDescricao(data.descricao());
         newEvento.setInicio(data.inicio());
         newEvento.setFim(data.fim());
-        newEvento.setLocal(data.local());
-        newEvento.setOrganizador(data.organizador());
         newEvento.setPrivado(data.privado());
+        newEvento.setLinkEvento(data.linkEvento());
+        newEvento.setComoChegar(data.comoChegar());
+        newEvento.setLinkForms(data.linkForms());
+        newEvento.setUsuario(data.usuario());
+        newEvento.setEndereco(data.endereco());
+
         eventoRepository.save(newEvento);
         return newEvento;
     }
@@ -44,9 +48,12 @@ public class EventoService {
         updateEvent.setDescricao(eventoRequestDTO.descricao());
         updateEvent.setInicio(eventoRequestDTO.inicio());
         updateEvent.setFim(eventoRequestDTO.fim());
-        updateEvent.setLocal(eventoRequestDTO.local());
-        updateEvent.setOrganizador(eventoRequestDTO.organizador());
         updateEvent.setPrivado(eventoRequestDTO.privado());
+        updateEvent.setLinkEvento(eventoRequestDTO.linkEvento());
+        updateEvent.setComoChegar(eventoRequestDTO.comoChegar());
+        updateEvent.setLinkForms(eventoRequestDTO.linkForms());
+        updateEvent.setUsuario(eventoRequestDTO.usuario());
+        updateEvent.setEndereco(eventoRequestDTO.endereco());
 
         return eventoRepository.save(updateEvent);
     }

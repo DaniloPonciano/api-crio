@@ -1,7 +1,9 @@
 package crio.api.controller;
 
+import crio.api.dominio.endereco.Endereco;
 import crio.api.dominio.evento.Evento;
 import crio.api.dominio.evento.EventoRequestDTO;
+import crio.api.dominio.usuario.Usuario;
 import crio.api.service.EventoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,11 +25,15 @@ public class EventoController {
             @RequestParam("descricao") String descricao,
             @RequestParam("inicio") LocalDateTime inicio,
             @RequestParam("fim") LocalDateTime fim,
-            @RequestParam("local") String local,
-            @RequestParam("organizador") String organizador,
-            @RequestParam("privado") boolean privado) {
+            @RequestParam("privado") boolean privado,
+            @RequestParam("linkEvento") String linkEvento,
+            @RequestParam("comoChegar") String comoChegar,
+            @RequestParam("linkForms") String linkForms,
+            @RequestParam("usuario") Usuario usuario,
+            @RequestParam("endereco") Endereco endereco) {
 
-        EventoRequestDTO eventoRequestDTO = new EventoRequestDTO(nome, descricao, inicio, fim, local, organizador, privado);
+        EventoRequestDTO eventoRequestDTO = new EventoRequestDTO(nome, descricao, inicio, fim, privado, linkEvento,
+                                                                 comoChegar, linkForms, usuario, endereco);
         Evento newEvento = this.eventoService.createEvento(eventoRequestDTO);
 
         return ResponseEntity.ok(newEvento);

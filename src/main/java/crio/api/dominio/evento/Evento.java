@@ -1,5 +1,6 @@
 package crio.api.dominio.evento;
 
+import crio.api.dominio.endereco.Endereco;
 import crio.api.dominio.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -34,9 +35,19 @@ public class Evento {
 
     private boolean privado;
 
+    private String linkEvento;
+
+    private String comoChegar;
+
+    private String linkForms;
+
     @ManyToOne
     @JoinColumn (name = "usuario_id")
     private Usuario usuario;
+
+    @OneToOne
+    @JoinColumn(name = "endereco_id")
+    private Endereco endereco;
 
 
 }
