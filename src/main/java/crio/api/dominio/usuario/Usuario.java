@@ -20,13 +20,9 @@ public class Usuario {
     @Id
     @GeneratedValue
     private UUID id;
-
     private String nomeCompleto;
-
     private String email;
-
     private String senha;
-
     private int tipoUsuario;
 
     private LocalDateTime createdAt;

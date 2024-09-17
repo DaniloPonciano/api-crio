@@ -2,10 +2,12 @@ package crio.api.service;
 
 import crio.api.dominio.evento.Evento;
 import crio.api.dominio.evento.EventoRequestDTO;
+import crio.api.dominio.evento.IntervaloDataDTO;
 import crio.api.repositorio.EventoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -64,4 +66,23 @@ public class EventoService {
         Evento evento = getEventById(id);
         eventoRepository.delete(evento);
     }
+
+    public List<Evento> findByUsuarioId(UUID usuarioId) {
+        return eventoRepository.findByUsuarioId(usuarioId); }
+
+    public List<Evento> findByIntervaloData(IntervaloDataDTO intervaloDataDTO) {
+        LocalDateTime inicio = intervaloDataDTO.inicio();
+        LocalDateTime fim = intervaloDataDTO.fim();
+        return eventoRepository.findByIntervaloData(inicio,fim);
+    }
+
+    public List<Evento> findByLocal(String local) {
+        return eventoRepository.findByLocal(local);
+    }
+    public List<Evento> findByLocalAndIntervaloData(String local,
+                                                    LocalDateTime inicio,
+                                                    LocalDateTime fim){
+        return eventoRepository.findByLocalAndIntervaloData(local,inicio,fim);
+    }
+
 }

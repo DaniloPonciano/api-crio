@@ -29,7 +29,7 @@ public class EnderecoController {
         return ResponseEntity.ok(newEndereco);
     }
 
-    @GetMapping()
+    @GetMapping
     public ResponseEntity<List<Endereco>> getAllAddress(){
         List<Endereco> endereco = this.enderecoService.getAllAddress();
         return ResponseEntity.ok(endereco);

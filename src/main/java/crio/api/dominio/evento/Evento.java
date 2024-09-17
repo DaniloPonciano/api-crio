@@ -20,23 +20,14 @@ public class Evento {
     @Id
     @GeneratedValue
     private UUID id;
-
     private String nome;
-
     private String descricao;
-
     private LocalDateTime inicio;
-
     private LocalDateTime fim;
-
     private String local;
-
     private boolean privado;
-
     private String linkEvento;
-
     private String comoChegar;
-
     private String linkForms;
 
     @ManyToOne

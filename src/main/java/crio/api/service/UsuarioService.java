@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -16,7 +17,7 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    public Usuario createUsuario(UsuarioRequestDTO data){
+    public Usuario createUser(UsuarioRequestDTO data){
 
         Usuario newUsuario = new Usuario();
         newUsuario.setNomeCompleto(data.nomeCompleto());
@@ -50,4 +51,21 @@ public class UsuarioService {
         Usuario usuario = getUserById(id);
         usuarioRepository.delete(usuario);
     }
+
+    public Optional<Usuario> findByEmail(String email) {
+        Optional<Usuario> usuario = usuarioRepository.findByEmailUser(email);
+        return usuario;
+    }
+
+//    public Optional<Usuario> findByUserCreate(LocalDateTime createdAt) {
+//        List<Usuario> usuario = usuarioRepository.findByUserCreate(createdAt);
+//        return usuarioRepository.save(usuario);
+//    }
+
+//    public Usuario findByTypeUser(int tipoUsuario) {
+//        List<Usuario> usuario = usuarioRepository.findByTypeUser(tipoUsuario);
+//        return usuario;
+//    }
+
+
 }

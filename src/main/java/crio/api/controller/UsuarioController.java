@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @RestController
@@ -26,7 +27,7 @@ public class UsuarioController {
             @RequestParam("tipousuario") int tipoUsuario){
 
         UsuarioRequestDTO usuarioRequestDTO = new UsuarioRequestDTO(nomeCompleto, email, senha, tipoUsuario);
-        Usuario newUsuario = this.usuarioService.createUsuario(usuarioRequestDTO);
+        Usuario newUsuario = this.usuarioService.createUser(usuarioRequestDTO);
 
         return ResponseEntity.ok(newUsuario);
     }
@@ -56,4 +57,21 @@ public class UsuarioController {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("/usuario/{email}")
+    public ResponseEntity<Optional<Usuario>> findByEmail(@PathVariable String email){
+        Optional<Usuario> usuario = usuarioService.findByEmail(email);
+        return ResponseEntity.ok(usuario);
+    }
+
+//    @GetMapping("/usuario/{tipoUsuario}")
+//    public ResponseEntity<List<Usuario>> findByTypeUser(@PathVariable int tipoUsuario){
+//        Usuario usuario = this.usuarioService.findByTypeUser(tipoUsuario);
+//        return ResponseEntity.ok(usuario);
+//    }
+
+    @GetMapping("/usuario/{criaUsuario}")
+    public ResponseEntity<List<Usuario>> findByUserCreate(@PathVariable String email){
+        Optional<Usuario> usuario = usuarioService.findByUserCreate(email);
+        return ResponseEntity.ok(usuario);
+    }
 }
