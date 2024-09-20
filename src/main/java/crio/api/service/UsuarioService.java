@@ -57,6 +57,7 @@ public class UsuarioService {
         return usuario;
     }
 
+
 //    public Optional<Usuario> findByUserCreate(LocalDateTime createdAt) {
 //        List<Usuario> usuario = usuarioRepository.findByUserCreate(createdAt);
 //        return usuarioRepository.save(usuario);
