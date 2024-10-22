@@ -30,8 +30,8 @@ public interface UsuarioRepository extends JpaRepository <Usuario, UUID> {
     @Query("SELECT u FROM Usuario u WHERE u.email = u.email")
     Optional<Usuario> findByEmailUser(String email);
 
-//    @Query("SELECT u FROM Usuario.u WHERE u.tipoUsuario = 1 OR u.tipoUsuario = 2")
-//    List<Usuario> findByTypeUser (int tipoUsuario);
+    @Query("SELECT u FROM Usuario.u WHERE u.tipoUsuario")
+    List<Usuario> findByTypeUser (int tipoUsuario);
 
     @Query("SELECT u FROM Usuario u WHERE u.createdAt BETWEEN :createdAt AND :fim")
     List<Usuario> findByUserCreate(LocalDateTime createdAt, LocalDateTime fim);
